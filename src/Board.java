@@ -1,3 +1,5 @@
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 /**
  * A class that creates the board
@@ -8,6 +10,8 @@ import java.util.ArrayList;
 public class Board {
 	
 	ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
+	
+	private BackGround[][] theBackGround;
 	
 	private Piece piece;
 	private String[][] layout;
@@ -213,5 +217,15 @@ public class Board {
 	{
 		return turn;
 	}
-
+	
+	public void paint(Graphics h) {
+		Graphics2D g = (Graphics2D)h;
+		for( int i = 0 ; i < theBackGround.length ; i++ )
+		{
+			for( int j = 0 ; j < theBackGround[i].length ; j++ )
+			{
+				theBackGround[j][i].paint(g);
+			}
+		}
+	}
 }

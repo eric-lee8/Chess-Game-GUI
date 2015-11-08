@@ -34,16 +34,4 @@ public class BackGround extends JApplet{
 			COL_START = this.COL_START;
 		}
    }
- 		  
-	public void paint(Graphics h) {
-		Graphics2D g = (Graphics2D)h;
-		for( int i = 0 ; i < img.length ; i++ )
-		{
-			for( int j = 0 ; j < img[i].length ; j++ )
-			{
-				img[j][i].paint(g);
-				}
-		}
-
-	}
 }

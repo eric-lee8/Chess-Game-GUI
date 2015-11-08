@@ -1,6 +1,7 @@
 
 import java.awt.Graphics2D; 
 import java.awt.Graphics; 
+
 import javax.swing.JApplet;
 
 
@@ -17,17 +18,17 @@ public class BackGround extends JApplet{
 		{
 			for( int j  = 0 ; j < img[i].length ; j+=2 )
 			{
-				if( j % 2 == 0 )
+				if( i % 2 == 0 )
 				{
-					img[j+1][i] = new MyImg(Definition.IMG_BG_WHITE, 145, 100 );
-					img[j][i] = new MyImg(Definition.IMG_BG_BLACK, 100, 100 );
+					img[j+1][i] = new MyImg(Definition.IMG_BG_WHITE, COL_START, ROW_START );
+					img[j][i] = new MyImg(Definition.IMG_BG_BLACK, COL_START+45, ROW_START );
 				}
 				else
 				{
-					img[j][i] = new MyImg(Definition.IMG_BG_BLACK, 100, 100 );
-					img[j+1][i] = new MyImg(Definition.IMG_BG_WHITE, 145, 100 );
+					img[j][i] = new MyImg(Definition.IMG_BG_BLACK, COL_START, ROW_START );
+					img[j+1][i] = new MyImg(Definition.IMG_BG_WHITE, COL_START+45, ROW_START );
 				}
-				COL_START += 45;
+				COL_START += 90;
 			}
 			ROW_START += 45;
 			COL_START = this.COL_START;
